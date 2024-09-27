@@ -51,6 +51,7 @@
             this.totalAmountOutput = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.changeOutput = new System.Windows.Forms.Label();
+            this.hiddenmessageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // burgerInput
@@ -293,12 +294,25 @@
             this.changeOutput.Size = new System.Drawing.Size(0, 16);
             this.changeOutput.TabIndex = 21;
             // 
+            // hiddenmessageLabel
+            // 
+            this.hiddenmessageLabel.AutoSize = true;
+            this.hiddenmessageLabel.BackColor = System.Drawing.Color.Yellow;
+            this.hiddenmessageLabel.Font = new System.Drawing.Font("Perpetua", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hiddenmessageLabel.ForeColor = System.Drawing.Color.White;
+            this.hiddenmessageLabel.Location = new System.Drawing.Point(255, 2);
+            this.hiddenmessageLabel.Name = "hiddenmessageLabel";
+            this.hiddenmessageLabel.Size = new System.Drawing.Size(16, 15);
+            this.hiddenmessageLabel.TabIndex = 22;
+            this.hiddenmessageLabel.Text = "   ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(388, 336);
+            this.Controls.Add(this.hiddenmessageLabel);
             this.Controls.Add(this.changeOutput);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.totalAmountOutput);
@@ -324,7 +338,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "McDonalds";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,6 +367,7 @@
         private System.Windows.Forms.Label totalAmountOutput;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Label changeOutput;
+        private System.Windows.Forms.Label hiddenmessageLabel;
     }
 }
 

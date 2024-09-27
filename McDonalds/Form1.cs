@@ -35,7 +35,6 @@ namespace McDonalds
             SoundPlayer ching = new SoundPlayer(Properties.Resources.Ching_WAV);
             ching.Play();
 
-            
             try
             {
                 burgers = Convert.ToDouble(burgerInput.Text);
@@ -68,13 +67,11 @@ namespace McDonalds
                 subtotalLabel.Visible = true;
             }
         }
-
         private void calculateChangeButton_Click(object sender, EventArgs e)
         {
             SoundPlayer ching = new SoundPlayer(Properties.Resources.Ching_WAV);
             ching.Play();
 
-            //
             try
             {
                 tendered = Convert.ToDouble(tenderedInput.Text);
@@ -87,28 +84,25 @@ namespace McDonalds
                     printReceiptButton.Visible = true;
                     printReceiptButton.Enabled = true;
                     changeLabel.Visible = true;
-
                 }
                 else
                 {
                     changeOutput.Text = "Error";
                 }
-
             }
             catch
             {
                 changeOutput.Text = "Error";
             }
-            
-
-           
         }
-
         private void printReceiptButton_Click(object sender, EventArgs e)
         {
             //Sound for my printer
             SoundPlayer print = new SoundPlayer(Properties.Resources.Pinter_WAV);
             print.Play();
+
+            //Hidden Message code
+            hiddenmessageLabel.Text = "Bet you cant see this";
 
             //Displays the receipt
             receiptOutput.Text += $"\nOrder Number #{order++}";
@@ -147,7 +141,7 @@ namespace McDonalds
             receiptOutput.Text += $"\n\nThanks for Choosing Mcdonalds ";
 
             newOrderButton.Visible = true;
-            
+
         }
 
         private void newOrderButton_Click(object sender, EventArgs e)
@@ -162,6 +156,8 @@ namespace McDonalds
             totalAmountOutput.Text = $"";
             tenderedInput.Text = $"";
             changeOutput.Text = $"";
+            hiddenmessageLabel.Text = $"";
+
             //Hides buttons, and labels
             calculateChangeButton.Enabled = true;
             printReceiptButton.Enabled = true;
@@ -175,12 +171,9 @@ namespace McDonalds
             totalLabel.Visible = false;
             tenderedLabel.Visible = false;
             tenderedInput.Visible = false;
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
     }
 }
+
+       
