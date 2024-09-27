@@ -31,24 +31,30 @@ namespace McDonalds
 
         private void calculateTotalButton_Click(object sender, EventArgs e)
         {
+            //Plays Sound for cash register
             SoundPlayer ching = new SoundPlayer(Properties.Resources.Ching_WAV);
             ching.Play();
+
+            
             try
             {
                 burgers = Convert.ToDouble(burgerInput.Text);
                 fries = Convert.ToDouble(fryInput.Text);
                 drinks = Convert.ToDouble(drinkInput.Text);
 
+                //Calculations for my food
                 subtotal = (burgers * 8.99) + (fries * 3.50) + (drinks * 2.00);
                 taxAmount = subtotal * 0.13;
                 total = subtotal + taxAmount;
 
                 subtotalLabel.Text = "Subtotal";
 
+                //Displays the calculations
                 subtotalOutput.Text = $"{subtotal.ToString("C")}";
                 taxAmountOutput.Text = $"{taxAmount.ToString("C")}";
                 totalAmountOutput.Text = $"{total.ToString("C")}";
 
+                //Shows the hidden labels and buttons
                 subtotalLabel.Visible = true;
                 taxLabel.Visible = true;
                 totalLabel.Visible = true;
@@ -67,13 +73,15 @@ namespace McDonalds
         {
             SoundPlayer ching = new SoundPlayer(Properties.Resources.Ching_WAV);
             ching.Play();
+
+            //
             try
             {
-
-
                 tendered = Convert.ToDouble(tenderedInput.Text);
+
                 if (tendered >= total)
                 {
+                    //Calculates change
                     change = tendered - total;
                     changeOutput.Text = $"{change.ToString("C")}";
                     printReceiptButton.Visible = true;
@@ -98,9 +106,11 @@ namespace McDonalds
 
         private void printReceiptButton_Click(object sender, EventArgs e)
         {
+            //Sound for my printer
             SoundPlayer print = new SoundPlayer(Properties.Resources.Pinter_WAV);
             print.Play();
 
+            //Displays the receipt
             receiptOutput.Text += $"\nOrder Number #{order++}";
             Thread.Sleep(500);
             Refresh();
@@ -142,6 +152,7 @@ namespace McDonalds
 
         private void newOrderButton_Click(object sender, EventArgs e)
         {
+            //Resets all the inputs, and outputs
             burgerInput.Text = $"";
             fryInput.Text = $"";
             drinkInput.Text = $"";
@@ -151,6 +162,7 @@ namespace McDonalds
             totalAmountOutput.Text = $"";
             tenderedInput.Text = $"";
             changeOutput.Text = $"";
+            //Hides buttons, and labels
             calculateChangeButton.Enabled = true;
             printReceiptButton.Enabled = true;
             newOrderButton.Enabled = true;
