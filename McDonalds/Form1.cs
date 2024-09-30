@@ -15,7 +15,7 @@ namespace McDonalds
     public partial class Form1 : Form
     {
         //global variables
-        double burgers = 8.99;
+        double burgers = 8.19;
         double fries = 3.50;
         double drinks = 2.00;
         double subtotal;
@@ -42,7 +42,7 @@ namespace McDonalds
                 drinks = Convert.ToDouble(drinkInput.Text);
 
                 //Calculations for my food
-                subtotal = (burgers * 8.99) + (fries * 3.50) + (drinks * 2.00);
+                subtotal = (burgers * 8.19) + (fries * 3.50) + (drinks * 2.00);
                 taxAmount = subtotal * 0.13;
                 total = subtotal + taxAmount;
 
@@ -111,7 +111,7 @@ namespace McDonalds
             receiptOutput.Text += $"\nSeptember 25th, 2024";
             Thread.Sleep(500);
             Refresh();
-            receiptOutput.Text += $"\n\nBurgers     x{burgers}  @ $8.99";
+            receiptOutput.Text += $"\n\nBurgers     x{burgers}  @ $8.19";
             Thread.Sleep(500);
             Refresh();
             receiptOutput.Text += $"\nFries       x{fries}  @ $3.50";
