@@ -103,7 +103,7 @@ namespace McDonalds
             print.Play();
 
             //Hidden Message code
-            hiddenmessageLabel.Text = "Bet you cant see this";
+            hiddenmessageLabel.Text = " (: Bet you cant see this :)";
 
             //Displays the receipt
             receiptOutput.Text += $"\nOrder Number #{order++}";
