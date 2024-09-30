@@ -69,7 +69,7 @@ namespace McDonalds
         }
         private void calculateChangeButton_Click(object sender, EventArgs e)
         {
-            SoundPlayer ching = new SoundPlayer(Properties.Resources.Ching_WAV);
+         SoundPlayer ching = new SoundPlayer(Properties.Resources.Ching_WAV);
             ching.Play();
 
             try
@@ -97,6 +97,7 @@ namespace McDonalds
         }
         private void printReceiptButton_Click(object sender, EventArgs e)
         {
+
             //Sound for my printer
             SoundPlayer print = new SoundPlayer(Properties.Resources.Pinter_WAV);
             print.Play();
@@ -141,6 +142,7 @@ namespace McDonalds
             receiptOutput.Text += $"\n\nThanks for Choosing Mcdonalds ";
 
             newOrderButton.Visible = true;
+            printReceiptButton.Enabled = false;
 
         }
 
